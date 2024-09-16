@@ -46,7 +46,7 @@ namespace RPGCombatKata
         {
             var character = new Character();
 
-            Assert.IsTrue(character.IsAlive);
+            Assert.That(character.IsAlive, Is.True);
         }
     }
 }
