@@ -15,6 +15,11 @@ namespace RPGCombatKata
             Level = 1;
             IsAlive = true;
         }
+
+        public void TakeDamage(int DamageDealt)
+        {
+             Health -= DamageDealt;
+        }
     }
 
     public class Tests
@@ -48,5 +53,17 @@ namespace RPGCombatKata
 
             Assert.That(character.IsAlive, Is.True);
         }
+
+        [Test]
+        public void Character1_When_Deals_Damage_Reduces_Character2_Health()
+        {
+            var character1 = new Character();
+            var character2 = new Character();
+
+            character2.TakeDamage(200);
+            Assert.That(character2.Health, Is.EqualTo (800));
+        }
+
+
     }
 }
