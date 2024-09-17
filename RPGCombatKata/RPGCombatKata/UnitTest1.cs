@@ -26,6 +26,21 @@ namespace RPGCombatKata
                 IsAlive = false;
             }
         }
+        public void Heal(int HealAmount)
+            
+
+        { 
+            if (!IsAlive) 
+                
+                return;
+            
+            Health += HealAmount;
+
+            if (Health > 1000)
+            {
+                Health = 1000;
+            }
+        }
     }
 
     public class Tests
@@ -81,6 +96,37 @@ namespace RPGCombatKata
             Assert.That(character.IsAlive, Is.False);
         }
 
+        [Test]
+        public void Dead_Character_Cannot_Be_Healed()
+        {
+            var character = new Character();
+
+
+            character.TakeDamage(1100);
+
+
+            character.Heal(200);
+
+            Assert.That(character.Health, Is.EqualTo(0));
+           
+        }
+
+        [Test]
+        public void Alive_Character_Can_Be_Healed()
+        {
+            var character = new Character();
+
+
+
+            character.TakeDamage(400);
+
+
+            character.Heal(200);
+
+            Assert.That(character.IsAlive, Is.True);
+            Assert.That(character.Health, Is.EqualTo(800));
+
+        }
 
     }
 }
