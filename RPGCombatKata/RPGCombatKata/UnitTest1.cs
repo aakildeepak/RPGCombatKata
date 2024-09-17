@@ -128,5 +128,39 @@ namespace RPGCombatKata
 
         }
 
+        [Test]
+        public void Alive_Character_Cannot_Be_Healed_More_Than_1000()
+        {
+            var character = new Character();
+
+
+
+            character.TakeDamage(100);
+
+
+            character.Heal(300);
+
+            Assert.That(character.IsAlive, Is.True);
+            Assert.That(character.Health, Is.EqualTo(1000));
+
+        }
+
+        [Test]
+        public void Alive_Character_At_1000_Health_Cannot_Be_Healed()
+        {
+            var character = new Character();
+
+
+
+            character.TakeDamage(0);
+
+            character.Heal(300);
+
+            Assert.That(character.IsAlive, Is.True);
+            Assert.That(character.Health, Is.EqualTo(1000));
+
+        }
+
+
     }
 }
