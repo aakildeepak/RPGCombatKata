@@ -3,7 +3,7 @@ using System.Reflection.PortableExecutable;
 namespace RPGCombatKata
 {
    
-    public class Tests
+    public class CharacterFunctionaliyUnitTests
     {
         private Character character;
     
