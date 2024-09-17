@@ -45,23 +45,25 @@ namespace RPGCombatKata
 
     public class Tests
     {
+        private Character character;
+    
         [SetUp]
         public void Setup()
         {
+            character = new Character();
         }
 
         [Test]
         public void Character_When_Created_Has_Default_Health_Value_Of_1000()
         {
-            var character = new Character();
-
+            
             Assert.That(character.Health, Is.EqualTo(1000));
         }
 
         [Test]
         public void Character_When_Created_Has_Default_Character_Level_Of_1()
         {
-            var character = new Character();
+            
 
             Assert.That(character.Level, Is.EqualTo(1));
 
@@ -70,26 +72,24 @@ namespace RPGCombatKata
         [Test]
         public void Character_When_Created_Is_Alive_By_Default()
         {
-            var character = new Character();
+           
 
             Assert.That(character.IsAlive, Is.True);
         }
 
         [Test]
-        public void Character1_When_Deals_Damage_Reduces_Character2_Health()
+        public void Character_When_Deals_Damage_Reduces_Health()
         {
-            var character1 = new Character();
-            var character2 = new Character();
 
-            character2.TakeDamage(200);
-            Assert.That(character2.Health, Is.EqualTo (800));
+
+            character.TakeDamage(200);
+            Assert.That(character.Health, Is.EqualTo (800));
         }
 
         [Test]
         public void Character_Dies_When_Health_Reaches_Zero()
         {
-            var character = new Character();
-         
+
 
             character.TakeDamage(1100);
             Assert.That(character.Health, Is.EqualTo(0));
@@ -99,8 +99,6 @@ namespace RPGCombatKata
         [Test]
         public void Dead_Character_Cannot_Be_Healed()
         {
-            var character = new Character();
-
 
             character.TakeDamage(1100);
 
@@ -114,9 +112,6 @@ namespace RPGCombatKata
         [Test]
         public void Alive_Character_Can_Be_Healed()
         {
-            var character = new Character();
-
-
 
             character.TakeDamage(400);
 
@@ -131,9 +126,6 @@ namespace RPGCombatKata
         [Test]
         public void Alive_Character_Cannot_Be_Healed_More_Than_1000()
         {
-            var character = new Character();
-
-
 
             character.TakeDamage(100);
 
@@ -148,10 +140,6 @@ namespace RPGCombatKata
         [Test]
         public void Alive_Character_At_1000_Health_Cannot_Be_Healed()
         {
-            var character = new Character();
-
-
-
             character.TakeDamage(0);
 
             character.Heal(300);
@@ -160,7 +148,6 @@ namespace RPGCombatKata
             Assert.That(character.Health, Is.EqualTo(1000));
 
         }
-
-
+                              
     }
 }
