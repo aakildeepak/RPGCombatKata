@@ -50,9 +50,15 @@ namespace RPGCombatKata
         }
 
 
+        [Test]
+        public void When_A_Numeber_Is_Passed_Adds_The_Number_Of_Level_To_The_Character()
+        {
+
+            character1.AddLevel( 5 );
 
 
-
+            Assert.That(character1.Level, Is.EqualTo(6));
+        }
 
 
 

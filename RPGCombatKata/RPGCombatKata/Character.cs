@@ -17,7 +17,7 @@ namespace RPGCombatKata
 
         public Character(string name)
         {
-            Name = name ;
+            Name = name;
             Health = 1000;
             Level = 1;
             IsAlive = true;
@@ -61,5 +61,11 @@ namespace RPGCombatKata
                 Health = 1000;
             }
         }
+
+        public void AddLevel(int AddLevel)
+        {
+            Level += AddLevel;
+        }
     }
+                                                                                               
 }
