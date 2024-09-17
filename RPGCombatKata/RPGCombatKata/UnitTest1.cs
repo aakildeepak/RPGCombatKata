@@ -4,10 +4,10 @@ namespace RPGCombatKata
 {
     public class Character
     { 
-        public int Health { get; set; }
-        public int Level { get; set; }
+        public int Health { get; private set; }
+        public int Level { get; private set; }
 
-        public bool IsAlive { get; set; }
+        public bool IsAlive { get; private set; }
 
         public Character()
         {
