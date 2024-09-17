@@ -60,6 +60,18 @@ namespace RPGCombatKata
             Assert.That(character1.Level, Is.EqualTo(6));
         }
 
-       
+        [Test]
+        public void Damage_Is_Reduced_By_50_Percent_When_Character1_Is_5_Or_More_Levels_Higher_Than_Character2()
+        {
+
+            character1.AddLevel(6);
+            character2.AddLevel(1);
+
+            character1.TakeDamage(200, character2);
+
+            Assert.That(character1.Health, Is.EqualTo(900));
+        }
+
+
     }
 }
