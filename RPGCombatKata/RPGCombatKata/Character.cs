@@ -36,6 +36,11 @@ namespace RPGCombatKata
                 DamageDealt /= 2;
             }
 
+            else if (Source.Level - Level  >= 5)
+            {
+                DamageDealt = (int)(DamageDealt * 1.5);
+            }
+
             Health -= DamageDealt;
 
             if (Health < 0)
