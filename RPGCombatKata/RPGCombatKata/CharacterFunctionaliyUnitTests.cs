@@ -64,7 +64,7 @@ namespace RPGCombatKata
             character1.TakeDamage(1100, character2);
 
 
-            character1.Heal(200);
+            character1.Heal(200, character1);
 
             Assert.That(character1.Health, Is.EqualTo(0));
            
@@ -77,7 +77,7 @@ namespace RPGCombatKata
             character1.TakeDamage(400, character2);
 
 
-            character1.Heal(200);
+            character1.Heal(200, character1);
 
             Assert.That(character1.IsAlive, Is.True);
             Assert.That(character1.Health, Is.EqualTo(800));
@@ -91,7 +91,7 @@ namespace RPGCombatKata
             character1.TakeDamage(100, character2);
 
 
-            character1.Heal(300);
+            character1.Heal(300, character1);
 
             Assert.That(character1.IsAlive, Is.True);
             Assert.That(character1.Health, Is.EqualTo(1000));
@@ -103,7 +103,7 @@ namespace RPGCombatKata
         {
             character1.TakeDamage(0, character2);
 
-            character1.Heal(300);
+            character1.Heal(300, character1);
 
             Assert.That(character1.IsAlive, Is.True);
             Assert.That(character1.Health, Is.EqualTo(1000));

@@ -40,10 +40,16 @@ namespace RPGCombatKata
                 IsAlive = false;
             }
         }
-        public void Heal(int HealAmount)
+        public void Heal(int HealAmount, Character Source)
 
 
         {
+            if (Name != Source.Name)
+            {
+                return;
+            }
+
+
             if (!IsAlive)
 
                 return;

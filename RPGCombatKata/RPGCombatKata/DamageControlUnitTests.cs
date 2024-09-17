@@ -24,8 +24,23 @@ namespace RPGCombatKata
             Assert.That(character1.Health, Is.EqualTo(1000));
         }
 
-       
-        
+
+        [Test]
+        public void A_Character_Can_Only_Heal_Itself()
+        {
+
+            character1.TakeDamage(200, character2);
+
+            character1.Heal(200, character1);
+
+
+            Assert.That(character1.Health, Is.EqualTo(1000));
+        }
+
+
+
+
+
 
     }
 }
