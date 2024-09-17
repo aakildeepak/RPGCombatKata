@@ -5,19 +5,23 @@ namespace RPGCombatKata
 
     public class DamageControlUnitTests
     {
-        private Character character;
+        private Character character1;
+        private Character character2;
 
         [SetUp]
         public void Setup()
         {
-            character = new Character();
+            character1 = new Character("Bob");
+            character2 = new Character("Chris");
         }
 
         [Test]
-        public void Character_When_Created_Has_Default_Health_Value_Of_1000()
+        public void A_Character_Cannot_Deal_Damage_To_Itself()
         {
 
-            Assert.That(character.Health, Is.EqualTo(1000));
+            character1.TakeDamage (200, character1);
+
+            Assert.That(character1.Health, Is.EqualTo(1000));
         }
 
        
