@@ -14,6 +14,7 @@ namespace RPGCombatKata
         public int Level { get; private set; }
 
         public bool IsAlive { get; private set; }
+        public List<string> Factions { get; private set; }
 
         public Character(string name)
         {
@@ -21,8 +22,13 @@ namespace RPGCombatKata
             Health = 1000;
             Level = 1;
             IsAlive = true;
+            Factions = new List<string>();
         }
-
+         
+        public void JoinFaction(string faction) 
+        {
+            Factions.Add(faction);
+        }
         public void TakeDamage(int DamageDealt, Character Source)
         {
 
