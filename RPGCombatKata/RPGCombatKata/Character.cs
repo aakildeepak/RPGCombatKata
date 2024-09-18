@@ -29,6 +29,11 @@ namespace RPGCombatKata
         {
             Factions.Add(faction);
         }
+
+        public void LeaveFaction(string faction)
+        {
+            Factions.Remove(faction);
+        }
         public void TakeDamage(int DamageDealt, Character Source)
         {
 
