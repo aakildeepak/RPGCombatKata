@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 namespace RPGCombatKata
 {
+    public static class Factions
+    {
+        public const string Knights = "Knights";
+        public const string Wizards = "Wizards";
+    }
     public class Character
 
     {

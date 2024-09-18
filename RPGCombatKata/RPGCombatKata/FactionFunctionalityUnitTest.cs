@@ -22,20 +22,20 @@ namespace RPGCombatKata
         [Test]
         public void A_Character_Can_Join_A_Faction()
         {
-            character1.JoinFaction("Knights");
+            character1.JoinFaction(Factions.Knights);
 
-            Assert.That(character1.Factions.Contains("Knights"), Is.True);
+            Assert.That(character1.Factions.Contains(Factions.Knights), Is.True);
         }
 
         [Test]
 
         public void A_Character_Can_Join_More_Than_One_Faction()
         {
-            character1.JoinFaction("Knights");
-            character1.JoinFaction("Wizards");
+            character1.JoinFaction(Factions.Knights);
+            character1.JoinFaction(Factions.Wizards);
 
-            Assert.That(character1.Factions.Contains("Knights"), Is.True);
-            Assert.That(character1.Factions.Contains("Wizards"), Is.True);
+            Assert.That(character1.Factions.Contains(Factions.Knights), Is.True);
+            Assert.That(character1.Factions.Contains(Factions.Wizards), Is.True);
 
         }
 
@@ -50,10 +50,10 @@ namespace RPGCombatKata
 
         public void A_Character_Can_Leave_A_Faction()
         {
-            character1.JoinFaction("Knights");
-            character1.LeaveFaction("Knights");
+            character1.JoinFaction(Factions.Knights);
+            character1.LeaveFaction(Factions.Knights);
 
-            Assert.That(character1.Factions.Contains("Knights"),Is.False);
+            Assert.That(character1.Factions.Contains(Factions.Knights),Is.False);
 
         }
 
@@ -61,13 +61,13 @@ namespace RPGCombatKata
 
         public void A_Character_Can_Join_Multiple_Factions_Leave_One_Faction()
         {
-            character1.JoinFaction("Knights");
-            character1.JoinFaction("Wizards");
+            character1.JoinFaction(Factions.Knights);
+            character1.JoinFaction(Factions.Wizards);
 
-            character1.LeaveFaction("Wizards");
+            character1.LeaveFaction(Factions.Wizards);
 
             Assert.That(character1.Factions.Count,Is.EqualTo(1));
-            Assert.That(character1.Factions.Contains("Knights"), Is.True);
+            Assert.That(character1.Factions.Contains(Factions.Knights), Is.True);
 
 
         }
@@ -76,11 +76,11 @@ namespace RPGCombatKata
 
         public void A_Character_Can_Join_Multiple_Faction_Leave_Multiple_Factions()
         {
-            character1.JoinFaction("Knights");
-            character1.JoinFaction("Wizards");
+            character1.JoinFaction(Factions.Knights);
+            character1.JoinFaction(Factions.Wizards);
 
-            character1.LeaveFaction("Knights");
-            character1.LeaveFaction("Wizards");
+            character1.LeaveFaction(Factions.Knights);
+            character1.LeaveFaction(Factions.Wizards);
 
             Assert.That(character1.Factions.Count, Is.EqualTo(0));
 
