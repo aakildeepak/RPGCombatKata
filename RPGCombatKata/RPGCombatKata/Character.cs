@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace RPGCombatKata
 {
-    public static class Factions
+    public static class CharacterFactions
     {
         public const string Knights = "Knights";
         public const string Wizards = "Wizards";
+    
     }
     public class Character
 
@@ -38,6 +39,21 @@ namespace RPGCombatKata
         public void LeaveFaction(string faction)
         {
             Factions.Remove(faction);
+        }
+
+        public bool AreAllies(Character Source)
+        {
+             if(Factions.Contains(CharacterFactions.Knights) && Source.Factions.Contains(CharacterFactions.Knights));
+            {
+                return true;
+            }
+
+            if(Factions.Contains(CharacterFactions.Wizards) && Source.Factions.Contains(CharacterFactions.Wizards));
+            {
+                return true;
+            }
+
+            return false;
         }
         public void TakeDamage(int DamageDealt, Character Source)
         {
